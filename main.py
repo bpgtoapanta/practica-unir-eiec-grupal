@@ -28,11 +28,11 @@ if __name__ == "__main__":
         filename = sys.argv[1]
         remove_duplicates = sys.argv[2].lower() == "yes"
     else:
-        print("The file must be specified as the first argumen")
-        print("The second argument indicates whether you want to remove duplicates")
+        print("You must set file as first param")
+        print("Second param indicates if you want to remove duplicates")
         sys.exit(1)
 
-    print(f"The words of the file will be read {filename}")
+    print(f"The words of file {filename} will be read")
     file_path = os.path.join(".", filename)
     if os.path.isfile(file_path):
         word_list = []
@@ -40,7 +40,7 @@ if __name__ == "__main__":
             for line in file:
                 word_list.append(line.strip())
     else:
-        print(f"The file {filename} does not exist")
+        print(f"File {filename} does not exists")
         word_list = ["ravenclaw", "gryffindor", "slytherin", "hufflepuff"]
 
     if remove_duplicates:
